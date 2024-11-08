@@ -1,0 +1,20 @@
+module encoder(
+    input wire[7:0] a,
+    output wire[2:0] b
+);
+reg[2:0] temp;
+always @(*)begin
+    temp = 3'b000;
+    case (1'b1)
+        a[0]:temp = 3'b000;
+        a[1]:temp = 3'b001;
+        a[2]:temp = 3'b010;
+        a[3]:temp = 3'b011;
+        a[4]:temp = 3'b100;
+        a[5]:temp = 3'b101;
+        a[6]:temp = 3'b110;
+        a[7]:temp = 3'b111;
+    endcase
+end
+assign b = temp;
+endmodule
